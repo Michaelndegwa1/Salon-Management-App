@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Mail, Bell } from 'lucide-react';
 import { mockAppointments } from '../lib/mockData';
 import AppointmentDetailsModal from './AppointmentDetailsModal';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Badge } from './ui/badge';
 
 interface CalendarProps {
@@ -30,11 +30,11 @@ export default function Calendar({ isMobile }: CalendarProps) {
   }, [selectedDate]);
 
   const formatDate = (date: Date) => {
-    return date.toLocaleDateString('en-US', { 
-      weekday: 'short', 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
+    return date.toLocaleDateString('en-US', {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
     });
   };
 
@@ -113,8 +113,8 @@ export default function Calendar({ isMobile }: CalendarProps) {
           <Button variant="outline" size="sm" onClick={nextDay}>
             <ChevronRight className="w-4 h-4" />
           </Button>
-          <Button 
-            size="sm" 
+          <Button
+            size="sm"
             onClick={() => setSelectedDate(new Date())}
             className={isMobile ? 'text-xs px-2' : ''}
           >
@@ -132,8 +132,8 @@ export default function Calendar({ isMobile }: CalendarProps) {
                 {filteredAppointments.length} appointments scheduled
               </CardTitle>
               {filteredAppointments.length > 0 && (
-                <Button 
-                  size="sm" 
+                <Button
+                  size="sm"
                   onClick={sendReminderToAll}
                   className="luxury-gradient text-white"
                 >
@@ -172,19 +172,17 @@ export default function Calendar({ isMobile }: CalendarProps) {
                     return (
                       <div
                         key={apt.id}
-                        className={`${
-                          isMobile
+                        className={`${isMobile
                             ? 'p-3 border rounded-lg'
                             : 'absolute left-0 right-0 p-3 rounded-lg cursor-pointer hover:shadow-md transition-shadow'
-                        } ${
-                          apt.status === 'confirmed'
+                          } ${apt.status === 'confirmed'
                             ? 'bg-blue-50 border-blue-300'
                             : apt.status === 'pending'
-                            ? 'bg-yellow-50 border-yellow-300'
-                            : apt.status === 'completed'
-                            ? 'bg-green-50 border-green-300'
-                            : 'bg-red-50 border-red-300'
-                        }`}
+                              ? 'bg-yellow-50 border-yellow-300'
+                              : apt.status === 'completed'
+                                ? 'bg-green-50 border-green-300'
+                                : 'bg-red-50 border-red-300'
+                          }`}
                         style={!isMobile ? { top: `${topPosition}px` } : undefined}
                       >
                         <div className="flex justify-between items-start gap-2">
@@ -198,16 +196,15 @@ export default function Calendar({ isMobile }: CalendarProps) {
                             </p>
                           </div>
                           <div className="flex flex-col gap-2 items-end">
-                            <div className={`text-xs px-2 py-1 rounded ${
-                              apt.status === 'confirmed' ? 'bg-blue-200' :
-                              apt.status === 'pending' ? 'bg-yellow-200' :
-                              apt.status === 'completed' ? 'bg-green-200' :
-                              'bg-red-200'
-                            }`}>
+                            <div className={`text-xs px-2 py-1 rounded ${apt.status === 'confirmed' ? 'bg-blue-200' :
+                                apt.status === 'pending' ? 'bg-yellow-200' :
+                                  apt.status === 'completed' ? 'bg-green-200' :
+                                    'bg-red-200'
+                              }`}>
                               {apt.status}
                             </div>
-                            <Button 
-                              size="sm" 
+                            <Button
+                              size="sm"
                               variant="ghost"
                               onClick={(e) => {
                                 e.stopPropagation();

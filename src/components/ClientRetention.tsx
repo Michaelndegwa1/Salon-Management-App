@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { mockClients, mockAppointments } from '../lib/mockData';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { formatKSH } from './ui/utils';
 
 interface ClientRetentionProps {

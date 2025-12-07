@@ -8,7 +8,7 @@ import { Textarea } from './ui/textarea';
 import { Switch } from './ui/switch';
 import { mockClients, mockServices, mockStaff } from '../lib/mockData';
 import { ChevronLeft, ChevronRight, Check, Calendar, Clock, User, Scissors, DollarSign } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface NewBookingModalProps {
   onClose: () => void;

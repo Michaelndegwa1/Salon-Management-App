@@ -8,7 +8,7 @@ import { Textarea } from './ui/textarea';
 import { Badge } from './ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { Phone, PhoneOff, ArrowUpRight, Plus, Search, TrendingUp, Clock, CheckCircle, XCircle, AlertCircle, Calendar, User } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface CallLog {
   id: string;
